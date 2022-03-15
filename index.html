@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="css/style.css">
+   <!-- <link rel="stylesheet" href="css/form-style.css"> -->
+   <title>COPY Stores Finder</title>
+</head>
+
+<body>
+   <div class="wrapper" id="wrapper">
+
+      <!-- Stories list -->
+      <div class="stores__list">
+
+         <header class="header__list">
+            <h2 class="list__title">Stores list</h2>
+         </header>
+
+         <!-- Stores -->
+         <aside class="stores__aside">
+
+            <div class="stores__search" id="stores__search">
+               <form class="header__search" action="#">
+                  <input class="search__item" id="search__item" type="search" maxlength="40" placeholder="Search">
+                  <div class="search__button-serch" id="search__button-serch" title="Search">
+                     <img class="search__img" src="./img/search.png" alt="search__img">
+                  </div>
+                  <div class="search__button-reserch" id="search__button-reserch" title="Clean">
+                     <img class="reserch__img" src="./img/refresh.png" alt="reserch__img">
+                  </div>
+               </form>
+            </div>
+
+            <!-- Buttons up, down, fix -->
+            <div class="button__hideshow" id="button__hideshow-list">
+               <button class="button__up button__up-list" id="button__up-list" title="Hide search field">
+                  <img class="button__up-img" src="./img/up.png" alt="button__up-list">
+               </button>
+               <button class="button__down button__down-list" id="button__down-list" title="Show search field">
+                  <img class="button__down-img" src="./img/down.png" alt="button__down-list">
+               </button>
+               <button class="button__fix button__fix-list" id="button__fix-list" title="Fix search field">
+                  <img class="button__fix-img" src="./img/fix.png" alt="button__fix-list">
+               </button>
+            </div>
+            <!-- Stores info -->
+            <ul class="aside__list" id="aside__list">
+               <div class="aside__list-load"></div>
+            </ul>
+            <!-- / Stores info -->
+         </aside><!-- / Stores -->
+
+         <footer class="store-list__footer" id="store-list__footer">
+            <button class="footer__button" id="button__create-store" title="Create store">
+               <img class="footer__button-icon" src="./img/plus.png" alt="footer__button-icon">
+               Create
+            </button>
+         </footer>
+      </div> <!-- / Stories list -->
+
+      <!-- Store Details -->
+      <div class="store__details" id="store__details">
+
+         <header class="store-details__header">
+            <h2 class="details__title">Store Details</h2>
+         </header>
+
+         <main class="store-details__main">
+
+            <!-- Details info -->
+            <form class="details__info" id="details__info"></form><!-- / Details info -->
+
+            <!-- Buttons up, down, fix -->
+            <div class="button__hideshow" id="button__hideshow-details">
+               <button class="button__up button__up-details" id="button__up-details" title="Hide information field">
+                  <img class="button__up-img" src="./img/up.png" alt="button__up">
+               </button>
+               <button class="button__down button__down-details" id="button__down-details"
+                  title="Show information field">
+                  <img class="button__down-img" src="./img/down.png" alt="button__down">
+               </button>
+               <button class="button__fix button__fix-details" id="button__fix-details" title="Fix information field">
+                  <img class="button__fix-img" src="./img/fix.png" alt="button__fix">
+               </button>
+            </div>
+
+            <!-- Sort buttons -->
+            <div class="sort">
+               <div class="sort__inner" id="sort__inner">
+                  <div class="sort__button sort__button-all" id="sort__button" data-button-status-all=""
+                     data-button-status-search title="Show all products">
+                     <div class="button__vision">
+                        <div class="button__img button__img-all no-background">
+                           <p class="button__count-all" id="button__count-all">-</p>
+                           <p class="button__name-all">All</p>
+                        </div>
+                     </div>
+                     <div class="button__name button__name-alltr">
+                        <p>All</p>
+                     </div>
+                  </div>
+                  <div class="sort__button sort__button-ok" id="sort__button" data-button-status-ok=""
+                     data-button-status-search title="Show products with status 'Ok'">
+                     <div class="button__vision">
+                        <div class="button__img button__img-ok no-background">
+                           <img class="img__ok" src="./img/img-checkbox.png" alt="img__ok">
+                        </div>
+                        <p class="button__count" id="button__count-ok">-</p>
+                     </div>
+                     <div class="button__name">
+                        <p>Ok</p>
+                     </div>
+                  </div>
+                  <div class="sort__button sort__button-stor" id="sort__button" data-button-status-storage=""
+                     data-button-status-search title="Show products with status 'Storage'">
+                     <div class="button__vision">
+                        <div class="button__img button__img-stor no-background">
+                           <img class="img-stor" src="./img/img-stor.png" alt="imf-stor">
+                        </div>
+                        <p class="button__count" id="button__count-stor">-</p>
+                     </div>
+                     <div class="button__name">
+                        <p>Storage</p>
+                     </div>
+                  </div>
+                  <div class="sort__button sort__button-out" id="sort__button" data-button-status-outstok="OUT_OF_STOCK"
+                     data-button-status-search title="Show products with status 'Out of stock'">
+                     <div class="button__vision">
+                        <div class="button__img button__img-out no-background">
+                           <img class="img__out" src="./img/img-out.png" alt="img__out">
+                        </div>
+                        <p class="button__count" id="button__count-out">-</p>
+                     </div>
+                     <div class="button__name">
+                        <p>Out of stock</p>
+                     </div>
+                  </div>
+               </div>
+            </div><!-- / Sort buttons -->
+
+            <!-- Products table -->
+            <div class="products">
+               <div class="products__title">
+                  <div class="products__title-inner">
+                     <p class="title__text">Products</p>
+                  </div>
+                  <div class="products__title-inner-search">
+                     <div class="products__search" id="products__search">
+                        <form class="products__search" action="#">
+                           <input class="products-search__item" id="products-search__item" type="search" maxlength="40"
+                              placeholder="Enter value to search">
+                           <div class="products-search__button" id="products-search__button" title="Search">
+                              <img class="search__img" src="./img/search.png" alt="search__img">
+                           </div>
+                           <div class="products-research__button" id="products-research__button" title="Clean">
+                              <img class="reserch__img" src="./img/refresh.png" alt="reserch__img">
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+
+               </div>
+               <div class="table__products">
+                  <div class="table__rownames" id="table__rownames" data-prop-name="Table">
+                     <div class="table__item table__names">
+                        <button class="table__sort-button" id="name-table__sort-button" data-prop-name="Name"
+                           data-sort-type="NONE">&#9776;</button>
+                        <p title="Name">Name</p>
+                     </div>
+                     <div class="table__item table__price">
+                        <button class="table__sort-button" id="price-table__sort-button" data-prop-name="Price"
+                           data-sort-type="NONE">&#9776;</button>
+                        <p title="Price">Price</p>
+                     </div>
+                     <div class="table__item table__specs">
+                        <button class="table__sort-button" id="specs-table__sort-button" data-prop-name="Specs"
+                           data-sort-type="NONE">&#9776;</button>
+                        <p title="Specs">Specs</p>
+                     </div>
+                     <div class="table__item table__supinfo">
+                        <button class="table__sort-button" id="suppli-table__sort-button" data-prop-name="SupplierInfo"
+                           data-sort-type="NONE">&#9776;</button>
+                        <p title="SupplierInfo">SupplierInfo</p>
+                     </div>
+                     <div class="table__item table__country">
+                        <button class="table__sort-button" id="madein-table__sort-button" data-prop-name="MadeIn"
+                           data-sort-type="NONE">&#9776;</button>
+                        <p title="Country">Country</p>
+                     </div>
+                     <div class="table__item table__company">
+                        <button class="table__sort-button" id="produc-table__sort-button"
+                           data-prop-name="ProductionCompanyName" data-sort-type="NONE">&#9776;</button>
+                        <p title="Prod. company">Prod. company</p>
+                     </div>
+                     <div class="table__item table__rating">
+                        <button class="table__sort-button" id="rating-table__sort-button" data-prop-name="Rating"
+                           data-sort-type="NONE">&#9776;</button>
+                        <p title="Rating">Rating</p>
+                     </div>
+                     <div class="table__item table__buts">
+                        <p></p>
+                     </div>
+                     <div class="table__item table__delete">
+                        <div>
+                           <p></p>
+                        </div>
+                     </div>
+                  </div>
+                  <div id="table__products"></div>
+
+               </div>
+            </div>
+
+         </main>
+
+         <footer class="store-details__footer" id="store-details__footer">
+            <button class="footer__button footer__button-details" id="button__create-product" title="Create product">
+               <img class="footer__button-icon" src="./img/plus.png" alt="footer__button-icon">
+               Create
+            </button>
+            <button class="footer__button footer__button-details" id="button__delete-store" title="Delete store">
+               <img class="footer__button-icon" src="./img/delete.png" alt="footer__button-icon">
+               Delete
+            </button>
+         </footer>
+      </div><!-- / Store Details -->
+
+      <!-- Window when no one store is not selected -->
+      <div class="stores__noselect" id="stores__noselect">
+         <header class="noselect__header">
+            <p class="header__title">No one store is not selected</p>
+         </header>
+         <main class="noselect__main">
+            <img class="main__img" src="./img/store.png" alt="main__img">
+            <h1 class="main__title">The store is not selected</h1>
+            <p class="main__text">Please select the store in Stores list</p>
+         </main>
+      </div>
+
+   </div><!-- / Wrapper -->
+
+   <!-- Pop-up Form Create new product -->
+   <div class="popup" id="popup__manipulation-product">
+      <div class="popup__inner">
+         <div class="popup__header">
+            <h2 class="popup__header-title" id="popup__header-title-product">Product</h2>
+         </div>
+         <div class="popup__main">
+            <form class="popup__main-form" id="popup__main-form-product" action="#">
+
+               <div class="popup__main-form-item popup__main-form-item-product" id="input-wrapper__name-product"
+                  data-validation-product-message="OK">
+                  <label class="form-item__label" for="form-item__name-product"><span>*</span>Name:</label>
+                  <input class="form-item__input" id="form-item__name-product" type="text" name="Name"
+                     placeholder="Enter name">
+               </div>
+
+               <div class="popup__main-form-item popup__main-form-item-product" id="input-wrapper__price-product"
+                  data-validation-product-message="OK">
+                  <label class="form-item__label" for="form-item__price-product"><span>*</span>Price:</label>
+                  <div class="form-item__input-wrapper">
+                     <input class="form-item__input" id="form-item__price-product" type="number" name="Price"
+                        placeholder="Enter price" min="0"> <span> USD</span>
+                  </div>
+               </div>
+
+               <div class="popup__main-form-item popup__main-form-item-product" id="input-wrapper__specs-product"
+                  data-validation-product-message="OK">
+                  <label class="form-item__label" for="form-item__specs-product"><span>*</span>Specs:</label>
+                  <textarea class="form-item__input" id="form-item__specs-product" type="text" name="Specs" size="100"
+                     placeholder="Enter product specs"></textarea>
+               </div>
+
+               <div class="popup__main-form-item popup__main-form-item-product" id="input-wrapper__rating-product"
+                  data-validation-product-message="OK">
+                  <label class="form-item__label" for="form-item__rating-product"><span>*</span>Rating:</label>
+                  <input class="form-item__input" id="form-item__rating-product" type="number" name="Rating"
+                     placeholder="Enter rating 1..5" min="0" max="5">
+               </div>
+
+               <div class="popup__main-form-item popup__main-form-item-product" id="input-wrapper__supinfo-product"
+                  data-validation-product-message="OK">
+                  <label class="form-item__label" for="form-item__supinfo-product"><span>*</span>Supplier info:</label>
+                  <textarea class="form-item__input" id="form-item__supinfo-product" type="text" name="Supplier info"
+                     placeholder="Enter supplier info"></textarea>
+               </div>
+
+               <div class="popup__main-form-item popup__main-form-item-product" id="input-wrapper__madein-product"
+                  data-validation-product-message="OK">
+                  <label class="form-item__label" for="form-item__madein-product"><span>*</span>Made in:</label>
+                  <input class="form-item__input" id="form-item__madein-product" type="text" name="Made in"
+                     placeholder="Enter origin country">
+               </div>
+
+               <div class="popup__main-form-item popup__main-form-item-product" id="input-wrapper__compname-product"
+                  data-validation-product-message="OK">
+                  <label class="form-item__label" for="form-item__compname-product"><span>*</span>Production company
+                     name:</label>
+                  <input class="form-item__input" id="form-item__compname-product" type="text" name="Production company
+                  name" placeholder="Enter manufacturer name">
+               </div>
+
+               <div class="popup__main-form-item popup__main-form-item-product" id="input-wrapper__status-product"
+                  data-validation-product-message="OK">
+                  <label class="form-item__label" for="form-item__status-product"><span>*</span>Status:</label>
+                  <select class="form-item__input" name="Status" id="form-item__status-product">
+                     <option value="OUT_OF_STOCK" selected>Out of stock</option>
+                     <option value="OK">Ok</option>
+                     <option value="STORAGE">Storage</option>
+                  </select>
+               </div>
+
+            </form>
+         </div>
+
+         <div class="popup__footer" id="popup__footer-product">
+            <button class="footer__button popup__button-create-product" id="popup__button-create-product">
+               Create
+            </button>
+            <button class="footer__button popup__button-save-product" id="popup__button-save-product">
+               Save
+            </button>
+            <button class="footer__button popup__button-cancel" id="popup__button-cancel-product">
+               Cancel
+            </button>
+         </div>
+
+      </div>
+   </div>
+   <!-- / Pop-up Form Create new product -->
+
+   <!-- Pop-up Form Create new store -->
+   <div class="popup" id="popup__create-store">
+      <div class="popup__inner">
+         <div class="popup__header">
+            <h2 class="popup__header-title">Create new store</h2>
+         </div>
+         <div class="popup__main" id="popup__main">
+            <form class="popup__main-form" id="popup__main-form-store" action="#">
+
+               <div class="popup__main-form-item" id="input-wrapper__name-store" data-validation-store-message="OK">
+                  <label class="form-item__label" for="form-item__name-store"><span>*</span>Name:</label>
+                  <input class="form-item__input" id="form-item__name-store" type="text" name="Name"
+                     placeholder="Enter name">
+               </div>
+
+               <div class="popup__main-form-item" id="input-wrapper__email-store" data-validation-store-message="OK">
+                  <label class="form-item__label" for="form-item__email-store"><span>*</span>Email:</label>
+                  <input class="form-item__input" id="form-item__email-store" type="email" name="Email"
+                     placeholder="Enter emale">
+               </div>
+
+               <div class="popup__main-form-item" id="input-wrapper__phone-store" data-validation-store-message="OK">
+                  <label class="form-item__label" for="form-item__phone-store"><span>*</span>Phone number:</label>
+                  <input class="form-item__input" id="form-item__phone-store" type="tel" name="Phone number"
+                     placeholder="Enter phone number">
+               </div>
+
+               <div class="popup__main-form-item" id="input-wrapper__address-store" data-validation-store-message="OK">
+                  <label class="form-item__label" for="form-item__address-store"><span>*</span>Address:</label>
+                  <input class="form-item__input" id="form-item__address-store" type="text" name="Address"
+                     placeholder="Enter address">
+               </div>
+
+               <div class="popup__main-form-item" id="input-wrapper__date-store" data-validation-store-message="OK">
+                  <label class="form-item__label" for="form-item__date-store"><span>*</span>Ectablished date:</label>
+                  <input class="form-item__input" id="form-item__date-store" type="date" name="Ectablished date"
+                     placeholder="MMM d, y">
+               </div>
+
+               <div class="popup__main-form-item" id="input-wrapper__area-store" data-validation-store-message="OK">
+                  <label class="form-item__label" for="form-item__area-store"><span>*</span>Floor area:</label>
+                  <input class="form-item__input" id="form-item__area-store" type="number" name="Floor area"
+                     placeholder="Enter floor area(in sq.m)" min="0">
+               </div>
+
+            </form>
+         </div>
+
+         <div class="popup__footer" id="popup__footer-store">
+            <button class="footer__button popup__button-create" id="popup__button-create-store">
+               Create
+            </button>
+            <button class="footer__button popup__button-cancel" id="popup__button-cancel-store">
+               Cancel
+            </button>
+         </div>
+
+      </div>
+   </div>
+   <!-- / Pop-up Form Create new store -->
+
+   <!-- Pop-up shure to delete -->
+   <div class="popup popup__confirmation" id="popup__confirmation">
+      <div class="popup__inner">
+         <div class="popup__header">
+            <h2 class="popup__header-title"><span>?</span>Confirmation</h2>
+         </div>
+         <div class="popup__main">
+            <p class="popup__main-text" id="popup__main-text">Are you sure?</p>
+         </div>
+         <div class="popup__footer" id="popup__footer-confirmation">
+            <button class="footer__button popup__button-create" id="popup__button-Ok">
+               Ok
+            </button>
+            <button class="footer__button popup__button-cancel" id="popup__button-cancel">
+               Cancel
+            </button>
+         </div>
+
+      </div>
+   </div>
+
+   <!-- Pop-up not found -->
+   <div class="popup" id="popup__notfound">
+      <div class="popup__inner">
+         <div class="popup__header">
+            <h2 class="popup__header-title">Nothing found.</h2>
+         </div>
+         <div class="popup__main">
+            <p class="popup__main-text">Enter other search options.</p>
+         </div>
+         <div class="popup__footer popup__notfound">
+            <button class="footer__button popup__button-notfound" id="popup__button-notfound">
+               Ok
+            </button>
+         </div>
+      </div>
+   </div>
+
+   <!-- Pop-up fill all input -->
+   <div class="popup popup__fillinput" id="popup__fillinput">
+      <div class="popup__inner">
+         <div class="popup__header">
+            <h2 class="popup__header-title">Form filled out incorrectly.</h2>
+         </div>
+         <div class="popup__main">
+            <p class="popup__main-text">Fill out all form inputs.</p>
+         </div>
+         <div class="popup__footer popup__notfound">
+            <button class="footer__button popup__button-fillinput" id="popup__button-fillinput">
+               Ok
+            </button>
+         </div>
+      </div>
+   </div>
+
+   <!-- Script -->
+   <script src="js/fetch.js"></script>
+   <script src="js/app.js"></script>
+</body>
+
+</html>
