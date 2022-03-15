@@ -7,3 +7,4 @@ This is a single page application that fetches data about stores and their produ
 5. create/delete stores and products;
 6. edit products;
 7. when creating/editing form fields, they are validated;
+8. all data manipulations are performed using requests to the server;
